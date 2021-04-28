@@ -29,12 +29,11 @@ def identify(mac):
 		
 		# Prints out the results in obj
 		print('\nCompany: ', obj['result']['company'])
-		print('MAC Prefix: ', obj['result']['mac_prefix'])
 		print('Address: ', obj['result']['address'])
+		print('Type: ', obj['result']['type'],)
+		print('MAC Prefix: ', obj['result']['mac_prefix'])
 		print('Start HEX: ', obj['result']['start_hex'])
-		print('End HEX: ', obj['result']['end_hex'])
-		print('Country: ', obj['result']['country'])
-		print('Type: ', obj['result']['type'], '\n')
+		print('End HEX: ', obj['result']['end_hex'], '\n')
 		
 		if __name__ == '__main__':
 			main()
