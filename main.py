@@ -37,6 +37,11 @@ def identify(mac):
 			main()
 		else:
 			exit()
+	elif mac == 'clear':
+		system('clear')
+	elif mac == 'exit' or mac == 'quit':
+		system('chmod +x cleanup.sh; ./cleanup.sh')
+		exit()
 	else:
 		invalid()
 
@@ -50,6 +55,7 @@ def main():
 		identify(mac)
 	except:
 		sys.stdout.write('\n')
+		system('chmod +x cleanup.sh; ./cleanup.sh')
 		exit()
 
 if __name__ == '__main__':

@@ -1,0 +1,26 @@
+[+] Enter MAC Address: 48:95:07:78:F2:71
+
+Company:  GUANGDONG OPPO MOBILE TELECOMMUNICATIONS CORP.,LTD
+Address:  NO.18 HAIBIN ROAD,,DONG GUAN  GUANG DONG  523860,CN
+Type:  MA-L
+MAC Prefix:  48:95:07
+Start HEX:  489507000000
+End HEX:  489507FFFFFF 
+
+[+] Enter MAC Address: 74:8d:08:09:61:eb
+
+Company:  Apple, Inc.
+Address:  1 Infinite Loop,Cupertino  CA  95014,US
+Type:  MA-L
+MAC Prefix:  74:8D:08
+Start HEX:  748D08000000
+End HEX:  748D08FFFFFF 
+
+[+] Enter MAC Address: f0038cfbb05f
+
+Company:  AzureWave Technology Inc.
+Address:  8F., No. 94, Baozhong Rd.,New Taipei City  Taiwan  231,TW
+Type:  MA-L
+MAC Prefix:  F0:03:8C
+Start HEX:  F0038C000000
+End HEX:  F0038CFFFFFF
