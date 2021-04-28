@@ -1,44 +1,59 @@
+import sys
 import json
-import urllib.request as urllib
-import codecs
+from colors import *
 from os import system
-from time import sleep
+import urllib.request as urllib
+
 
 url = 'https://macvendors.co/api/'
 
-ColorOff = "\\033[0m"
-Red = "\\033[0;31m"
+def invalid():
+	sys.stdout.write(RED)
+	print('\n[-] Invalid MAC Address\n')
+	sys.stdout.write(RESET)
+	if __name__ == '__main__':
+		main()
+	else:
+		exit()
 
 def identify(mac):
-	# Checks if the input length is 17 or 12, if yes gets details if not ask input again or exit
-	if len(mac) != 17 or len(mac) != 12:
-		print('[-] Invalid MAC Address')
-		sleep(3)
-		if __name__ == '__main__':
-			main()
-		else:
-			exit()
-	else:
+	if len(mac) == 17 or len(mac) == 12:
+		
 		# Requests data from https://macvendors.co/api/<MAC ADDRESS HERE>
 		request = urllib.Request(url+mac, headers={'User-Agent' : 'API Browser'})
 		response = urllib.urlopen(request)
+		
 		# Reads the json response to obj with codec utf-8
-		reader = codecs.getreader('utf-8')
-		obj = json.load(reader(response))
+		# reader = codecs.getreader('utf-8')
+		obj = json.load(response)
+		
 		# Prints out the results in obj
-		print('Company: ', obj['result']['company'])
+		print('\nCompany: ', obj['result']['company'])
 		print('MAC Prefix: ', obj['result']['mac_prefix'])
 		print('Address: ', obj['result']['address'])
 		print('Start HEX: ', obj['result']['start_hex'])
 		print('End HEX: ', obj['result']['end_hex'])
 		print('Country: ', obj['result']['country'])
-		print('Type: ', obj['result']['type'])
+		print('Type: ', obj['result']['type'], '\n')
+		
+		if __name__ == '__main__':
+			main()
+		else:
+			exit()
+	else:
+		invalid()
+
 
 def main():
-	# Ask for user input and passes the input to identify function
-	system('clear')
-	mac = input("[+] Enter MAC Address: ")
-	identify(mac)
+	try:
+		# Ask for user input and passes the input to identify function
+		mac = input("[+] Enter MAC Address: ")
+		identify(mac)
+	except:
+		sys.stdout.write(YELLOW)
+		print('\n[x] Exiting...')
+		sys.stdout.write(RESET)
+		exit()
 
 if __name__ == '__main__':
 	main()
